@@ -8,6 +8,8 @@ module.exports = withMT({
     extend: {
       colors: {
         bodyColor: "#151E27",
+        mainColor: "#1D2733",
+        silver: "#8F8F8F",
       },
     },
   },

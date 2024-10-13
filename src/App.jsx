@@ -9,15 +9,17 @@ import Exchange from "./pages/exchange/Exchange";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/main" replace />} />
+      {/* <Route path="/" element={<Navigate to="/main" replace />} /> */}
 
-      <Route path="/main" element={<Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="draw" element={<Draw />} />
         <Route path="friends" element={<Friends />} />
         <Route path="invites" element={<Invites />} />
         <Route path="exchange" element={<Exchange />} />
       </Route>
+
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
