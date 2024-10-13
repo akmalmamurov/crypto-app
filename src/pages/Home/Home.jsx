@@ -1,8 +1,13 @@
+import HomeBottom from "./HomeBottom";
+import HomeTop from "./HomeTop";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <section>
+      <HomeTop />
+      <HomeBottom />
+    </section>
+  );
+};
 
-export default Home
+export default Home;

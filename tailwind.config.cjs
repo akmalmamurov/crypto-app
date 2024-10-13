@@ -6,10 +6,14 @@ module.exports = withMT({
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
       colors: {
         bodyColor: "#151E27",
         mainColor: "#1D2733",
         silver: "#8F8F8F",
+        salute: "#2D343C",
       },
     },
   },
