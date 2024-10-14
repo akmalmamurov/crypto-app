@@ -5,6 +5,7 @@ import Draw from "./pages/draw/Draw";
 import Friends from "./pages/friends/Friends";
 import Invites from "./pages/invites/Invites";
 import Exchange from "./pages/exchange/Exchange";
+import Settings from "./pages/settings/Settings";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path="invites" element={<Invites />} />
         <Route path="exchange" element={<Exchange />} />
       </Route>
-
+      <Route path="settings" element={<Settings />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

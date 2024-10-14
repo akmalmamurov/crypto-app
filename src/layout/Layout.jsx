@@ -1,5 +1,5 @@
 import Navbar from "@/components/navbar/Navbar";
-import useTelegramStore from "@/context";
+import useTelegramStore from "@/context/telegram";
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const Layout = () => {
 
   return (
     <div className="bg-bodyColor h-screen flex flex-col">
-      <div className="flex-grow px-[14px] py-[10px] overflow-y-auto">
+      <div className="flex-grow px-[14px] overflow-y-auto">
         <Outlet />
       </div>
       <div className="flex-shrink-0  bg-red-500">

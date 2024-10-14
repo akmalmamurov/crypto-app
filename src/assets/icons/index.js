@@ -4,3 +4,6 @@ export * from "./ArrowDownIcon";
 export * from "./DollarIcon";
 export * from "./TonIcon";
 export * from "./UsdIcon";
+export * from "./ChevronDownIcon";
+export * from "./SuccessIcon.jsx";
+export * from "./ChevronRightIcon";
