@@ -1,24 +1,21 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDownIcon, ChevronRightIcon, SuccessIcon } from "@/assets/icons";
-import useLanguageStore from "@/context/language";
 import { useTranslation } from "@/hooks";
 
-const SettingLanguage = ({ isOpen, setIsOpen, currencyOpen }) => {
-  const language = useLanguageStore((state) => state.language);
-  const setLanguage = useLanguageStore((state) => state.setLanguage);
-  const languages = ["English", "Russian", "O'zbek"];
-  const t = useTranslation();
-
+const SettingCurency = ({ languageOpen,isOpen,setIsOpen }) => {
+  const [curren, setCurren] = useState("USD");
+  const currencies = ["USD", "RUB", "UZS"];
+    const t = useTranslation();
   const toggleDropdown = () => setIsOpen(!isOpen);
 
-  const handleSelect = (lang) => {
-    setLanguage(lang);
+  const handleSelect = (currency) => {
     setIsOpen(false);
+    setCurren(currency);
   };
 
   return (
-    <div className={`${currencyOpen ? "hidden" : "block"}`}>
+    <div className={`${languageOpen ? "hidden" : "block"}`}>
       <div className="relative">
         <motion.div
           className={`${
@@ -30,7 +27,7 @@ const SettingLanguage = ({ isOpen, setIsOpen, currencyOpen }) => {
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.3 }}
         >
-          <p className="font-medium text-base ">{t.selectLanguage}</p>
+          <p className="font-medium text-base ">{t.mainCurrency}</p>
           <ChevronDownIcon
             className={`w-5 h-5 transition-transform duration-300 ${
               isOpen ? "rotate-180" : ""
@@ -43,20 +40,19 @@ const SettingLanguage = ({ isOpen, setIsOpen, currencyOpen }) => {
             <motion.div
               initial={{ opacity: 0, y: -10, height: 0 }}
               animate={{ opacity: 1, y: 0, height: "auto" }}
-              exit={{ opacity: 0, y: 30, height: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 10, height: 0, scale: 0.95 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="absolute mt-2 w-full rounded-[7px] z-10 mb-4"
             >
-              {languages.map((lang) => (
+              {currencies.map((item, index) => (
                 <div
-                  key={lang}
-                  onClick={() => handleSelect(lang)}
-                  className="h-[75px] px-[21px] flex items-center
-                   rounded-[7px] text-white cursor-pointer hover:bg-opacity-80 mb-3 bg-mainColor justify-between"
+                  key={index}
+                  onClick={() => handleSelect(item)}
+                  className="h-[75px] px-[21px] flex items-center text-white cursor-pointer hover:bg-opacity-80 mb-3 bg-mainColor justify-between"
                 >
-                  <p className="font-medium text-base">{lang}</p>
+                  <p className="font-medium text-base">{item}</p>
                   <div>
-                    {language === lang ? <SuccessIcon /> : <ChevronRightIcon />}
+                    {curren === item ? <SuccessIcon /> : <ChevronRightIcon />}
                   </div>
                 </div>
               ))}
@@ -68,4 +64,4 @@ const SettingLanguage = ({ isOpen, setIsOpen, currencyOpen }) => {
   );
 };
 
-export default SettingLanguage;
+export default SettingCurency;

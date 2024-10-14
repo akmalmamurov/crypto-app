@@ -1,6 +1,6 @@
 {
-    "settings": "Настройки",
-    "selectLanguage": "Выберите язык",
-    "welcome": "Добро пожаловать"
-  }
-  
+  "settings": "Настройки",
+  "selectLanguage": "Выберите язык",
+  "welcome": "Добро пожаловать",
+  "mainCurrency": "Основная валюта"
+}
