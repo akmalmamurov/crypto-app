@@ -7,3 +7,7 @@ export * from "./UsdIcon";
 export * from "./ChevronDownIcon";
 export * from "./SuccessIcon.jsx";
 export * from "./ChevronRightIcon";
+export * from "./DrawCardIcon";
+export * from "./PendingIcon";
+export * from "./FailedIcon";
+export * from "./CompletedIcon";

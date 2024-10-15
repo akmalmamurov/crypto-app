@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronDownIcon, ChevronRightIcon, SuccessIcon } from "@/assets/icons";
 import useLanguageStore from "@/context/language";
 import { useTranslation } from "@/hooks";
@@ -38,31 +37,34 @@ const SettingLanguage = ({ isOpen, setIsOpen, currencyOpen }) => {
           />
         </motion.div>
 
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10, height: 0 }}
-              animate={{ opacity: 1, y: 0, height: "auto" }}
-              exit={{ opacity: 0, y: 30, height: 0, scale: 1 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="absolute mt-2 w-full rounded-[7px] z-10 mb-4"
-            >
-              {languages.map((lang) => (
-                <div
-                  key={lang}
-                  onClick={() => handleSelect(lang)}
-                  className="h-[75px] px-[21px] flex items-center
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, height: 0 }}
+            animate={{ opacity: 1, y: 0, height: "auto" }}
+            exit={{
+              opacity: 0,
+              y: 1,
+              height: 0,
+              transition: { duration: 0.1 },
+            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="absolute mt-2 w-full rounded-[7px] z-10 mb-4"
+          >
+            {languages.map((lang) => (
+              <div
+                key={lang}
+                onClick={() => handleSelect(lang)}
+                className="h-[75px] px-[21px] flex items-center
                    rounded-[7px] text-white cursor-pointer hover:bg-opacity-80 mb-3 bg-mainColor justify-between"
-                >
-                  <p className="font-medium text-base">{lang}</p>
-                  <div>
-                    {language === lang ? <SuccessIcon /> : <ChevronRightIcon />}
-                  </div>
+              >
+                <p className="font-medium text-base">{lang}</p>
+                <div>
+                  {language === lang ? <SuccessIcon /> : <ChevronRightIcon />}
                 </div>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
+              </div>
+            ))}
+          </motion.div>
+        )}
       </div>
     </div>
   );

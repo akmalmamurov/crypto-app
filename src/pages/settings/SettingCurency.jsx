@@ -17,15 +17,12 @@ const SettingCurency = ({ languageOpen,isOpen,setIsOpen }) => {
   return (
     <div className={`${languageOpen ? "hidden" : "block"}`}>
       <div className="relative">
-        <motion.div
+        <div
           className={`${
             isOpen ? "hidden" : "flex"
           } h-[75px] bg-mainColor rounded-[7px] text-white px-[21px] items-center justify-between cursor-pointer`}
           onClick={toggleDropdown}
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ duration: 0.3 }}
+        
         >
           <p className="font-medium text-base ">{t.mainCurrency}</p>
           <ChevronDownIcon
@@ -33,14 +30,13 @@ const SettingCurency = ({ languageOpen,isOpen,setIsOpen }) => {
               isOpen ? "rotate-180" : ""
             }`}
           />
-        </motion.div>
+        </div>
 
-        <AnimatePresence>
           {isOpen && (
             <motion.div
               initial={{ opacity: 0, y: -10, height: 0 }}
               animate={{ opacity: 1, y: 0, height: "auto" }}
-              exit={{ opacity: 0, y: 10, height: 0, scale: 0.95 }}
+              exit={{ opacity: 0, y: 10, height: 0,  }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="absolute mt-2 w-full rounded-[7px] z-10 mb-4"
             >
@@ -58,7 +54,6 @@ const SettingCurency = ({ languageOpen,isOpen,setIsOpen }) => {
               ))}
             </motion.div>
           )}
-        </AnimatePresence>
       </div>
     </div>
   );
