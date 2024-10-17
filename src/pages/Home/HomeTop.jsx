@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Button } from "@material-tailwind/react";
 
 import { priceFormat } from "@/utils";
@@ -8,11 +7,13 @@ import {
   DollarIcon,
   SettingIcon,
 } from "@/assets/icons";
-import SettingModal from "@/components/modal/SettingModal";
 import { useNavigate } from "react-router-dom";
+import { logo } from "@/assets/images";
+import useSettingsStore from "@/context/settings";
 
 const HomeTop = () => {
   const navigate = useNavigate();
+  const {currency} = useSettingsStore();
   const goSetting = () => {
     navigate("/settings");
   };
@@ -21,7 +22,7 @@ const HomeTop = () => {
       <div className="bg-mainColor pb-[20px] pt-[13px] px-4 rounded-[6px] mb-[9px]">
         <div className="flex justify-between mb-[23px]">
           {/* logo */}
-          <h1 className="text-white text-xl">Logo</h1>
+          <img src={logo} alt="" />
           {/* icon */}
           <button onClick={goSetting}>
             <SettingIcon />
@@ -32,7 +33,7 @@ const HomeTop = () => {
             Balance
           </h4>
           <h2 className="text-[32px] font-medium text-white">
-            {priceFormat(49888.37)} <span className="text-silver">UZS</span>
+            {priceFormat(49888.37)} <span className="text-silver">{currency}</span>
           </h2>
         </div>
         {/* buttons */}

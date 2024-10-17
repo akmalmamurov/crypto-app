@@ -2,7 +2,7 @@
 import uz from "@/locales/uz.json";
 import en from "@/locales/en.json";
 import ru from "@/locales/ru.json";
-import useLanguageStore from "@/context/language";
+import useSettingsStore from "@/context/settings";
 
 const translations = {
   "O'zbek": uz,
@@ -11,7 +11,7 @@ const translations = {
 };
 
 export const useTranslation = () => {
-  const language = useLanguageStore((state) => state.language);
+  const language = useSettingsStore((state) => state.language);
   const translation = translations[language] || translations["English"];
 
   return translation;

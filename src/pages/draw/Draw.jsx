@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { drawTabsHeader } from "@/data";
 import {
   Tab,
@@ -10,15 +11,16 @@ import DrawCard from "./DrawCard";
 import DrawWallet from "./DrawWallet";
 
 const Draw = () => {
+
   return (
     <div className="pt-5">
       {/* draw top tab */}
       <div>
-        <Tabs id="custom-animation" value="Card">
+        <Tabs value={"Card"}>
           <TabsHeader
             className="bg-mainColor p-[6px] rounded-[7px] h-[48px]"
             indicatorProps={{
-              className: "bg-salute rounded-[5px] ",
+              className: "bg-salute rounded-[5px]",
             }}
           >
             {drawTabsHeader.map((item) => (
@@ -31,13 +33,7 @@ const Draw = () => {
               </Tab>
             ))}
           </TabsHeader>
-          <TabsBody
-            animate={{
-              initial: { y: 250 },
-              mount: { y: 0 },
-              unmount: { y: 250 },
-            }}
-          >
+          <TabsBody>
             <TabPanel key={"Card"} value={"Card"} className="pt-[15px] px-0">
               <DrawCard />
             </TabPanel>

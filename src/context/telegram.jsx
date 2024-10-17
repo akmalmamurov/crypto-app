@@ -10,10 +10,6 @@ const useTelegramStore = create(
       user: null,
       setUser: (userData) => set({ user: userData }),
 
-      isMainButtonVisible: false,
-      setMainButtonVisible: (isVisible) =>
-        set({ isMainButtonVisible: isVisible }),
-
       expandWebApp: () => {
         tg.expand();
       },

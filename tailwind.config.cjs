@@ -14,6 +14,7 @@ module.exports = withMT({
         mainColor: "#1D2733",
         silver: "#8F8F8F",
         salute: "#2D343C",
+        bullRed: "#D04444",
       },
     },
   },

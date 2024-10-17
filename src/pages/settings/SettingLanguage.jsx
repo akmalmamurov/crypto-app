@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import { ChevronDownIcon, ChevronRightIcon, SuccessIcon } from "@/assets/icons";
-import useLanguageStore from "@/context/language";
 import { useTranslation } from "@/hooks";
+import useSettingsStore from "@/context/settings";
 
 const SettingLanguage = ({ isOpen, setIsOpen, currencyOpen }) => {
-  const language = useLanguageStore((state) => state.language);
-  const setLanguage = useLanguageStore((state) => state.setLanguage);
+  const { language, setLanguage } = useSettingsStore();
   const languages = ["English", "Russian", "O'zbek"];
   const t = useTranslation();
 

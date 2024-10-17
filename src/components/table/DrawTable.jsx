@@ -1,7 +1,9 @@
 import { CompletedIcon, FailedIcon, PendingIcon } from "@/assets/icons";
+import useSettingsStore from "@/context/settings";
 import { drawTableHeader, drawTableList } from "@/data";
 
 const DrawTable = () => {
+  const {currency}  = useSettingsStore()
   return (
     <div className="font-poppins bg-mainColor rounded-[7px]">
       <table className="w-full table-auto">
@@ -21,7 +23,7 @@ const DrawTable = () => {
           {drawTableList.map((row, index) => (
             <tr key={index} >
               <td className="py-3 px-3 text-white text-sm">{row.time}</td>
-              <td className="py-3 px-3 text-white text-sm">{row.amount} UZS</td>
+              <td className="py-3 px-3 text-white text-sm">{row.amount} {currency}</td>
               <td className="py-3 px-3 text-white text-sm">{row.type}</td>
               <td className="flex justify-center  py-3 text-white text-sm ml-auto">
                 {row.status === "pending" && <PendingIcon/>}

@@ -16,7 +16,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="draw" element={<Draw />} />
         <Route path="friends" element={<Friends />} />
-        <Route path="invites" element={<Invites />} />
+        <Route path="mission" element={<Invites />} />
         <Route path="exchange" element={<Exchange />} />
       </Route>
       <Route path="settings" element={<Settings />} />
