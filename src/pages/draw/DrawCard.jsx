@@ -34,6 +34,8 @@ const DrawCard = () => {
       return;
     }
 
+    reset();
+
     console.log(parsedData);
   };
 
@@ -170,12 +172,12 @@ const DrawCard = () => {
               ))}
             </div>
           </div>
-          <div>
-            <BaseTitle>Transaction history</BaseTitle>
-            <DrawTable />
-          </div>
         </div>
       )}
+      <div className="mt-[15px]">
+        <BaseTitle>Transaction history</BaseTitle>
+        <DrawTable />
+      </div>
     </form>
   );
 };
