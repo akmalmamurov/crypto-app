@@ -6,12 +6,11 @@ import useSettingsStore from "@/context/settings";
 import { cardsData } from "@/data";
 import { useForm } from "react-hook-form";
 import { formatInputNumber } from "@/utils";
-import { logo } from "@/assets/images";
 import { Button } from "@material-tailwind/react";
 
-const MIN_AMOUNT = 20000;
 
 const DrawCard = () => {
+  const MIN_AMOUNT = 20000;
   const {
     register,
     handleSubmit,

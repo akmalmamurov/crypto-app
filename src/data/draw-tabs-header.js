@@ -1,1 +1,1 @@
-export const drawTabsHeader = ["Card", "Wallet"];
+export const drawTabsHeader = ["card", "wallet"];

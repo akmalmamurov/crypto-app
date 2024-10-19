@@ -14,7 +14,7 @@ const Layout = () => {
 
   return (
     <div className="bg-bodyColor h-screen flex flex-col">
-      <div className="flex-grow px-[14px] overflow-y-auto">
+      <div className="flex-grow px-[14px] overflow-y-auto scrollbar-none">
         <Outlet />
       </div>
       <div className="flex-shrink-0  bg-red-500">

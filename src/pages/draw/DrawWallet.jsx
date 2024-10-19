@@ -1,21 +1,22 @@
-import { CardRedIcon, LogoIcon } from "@/assets/icons";
+import { CardRedIcon, ChevronRightIcon, LogoIcon } from "@/assets/icons";
 import DrawTable from "@/components/table/DrawTable";
 import BaseTitle from "@/components/title/BaseTitle";
 import useSettingsStore from "@/context/settings";
-import { cardsData } from "@/data";
 import { Button } from "@material-tailwind/react";
 import React from "react";
 import { useForm } from "react-hook-form";
 
 const DrawWallet = () => {
+  const MIN_AMOUNT = 20000;
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
     watch,
   } = useForm();
   const addressValue = watch("address");
-  const currency = useSettingsStore((state) => state.currency); // currencyni olishni to'g'riladim
+  const currency = useSettingsStore((state) => state.currency);
   const onSubmit = (data) => {
     const parsedData = {
       ...data,
@@ -36,30 +37,27 @@ const DrawWallet = () => {
   };
   const handleAmountChange = (e) => {
     const value = e.target.value;
-    const formattedValue = formatCurrencyInput(value); // formatlash funktsiyasi chaqirilgan
-    e.target.value = formattedValue; // noto'g'ri setValue dan foydalanganingizni to'g'riladim
+    const formattedValue = formatCurrencyInput(value);
+    e.target.value = formattedValue;
   };
 
   return (
     <div className="">
       <BaseTitle>Receiver</BaseTitle>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className={addressValue ? "mb-0" : "mb-20"}
-      >
-        <div className="bg-mainColor h-[56px] rounded-[7px] flex items-center">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="bg-mainColor h-[50px] rounded-[7px] flex items-center mb-[15px]">
           <input
             autoComplete="off"
             type="text"
-            className="bg-transparent focus:outline-none pl-5 w-full"
+            className="bg-transparent focus:outline-none pl-5 w-full placeholder:text-silver text-white"
             placeholder="Address or name"
             {...register("address", { required: true })}
           />
         </div>
 
         {addressValue ? (
-          <div className="mt-[10px]">
-            <div className="bg-mainColor rounded-[7px] pt-[10px] pl-5 pr-[10px] pb-[14px] mb-[25px] font-poppins">
+          <div>
+            <div className="bg-mainColor rounded-[7px] pt-[10px] pl-5 pr-[10px] pb-[14px] mb-[15px] font-poppins">
               <div className="flex justify-between items-center mb-5">
                 <h4 className="min-w-min text-sm text-silver">Enter summa</h4>
                 <p className="text-[10px] font-normal text-bullRed">
@@ -97,8 +95,8 @@ const DrawWallet = () => {
                   </h4>
                   <LogoIcon />
                 </div>
-                <p>
-                  100 000 <span>{currency}</span>
+                <p className="font-normal text-white text-base">
+                  1.2<span className="ml-1">TON</span>
                 </p>
               </div>
             </div>
@@ -113,7 +111,16 @@ const DrawWallet = () => {
           <div>
             <div className="mb-[15px]">
               <BaseTitle>Recently receivers</BaseTitle>
-              <h1>asd</h1>
+              <div className="bg-mainColor rounded-[7px] ">
+                <div className="flex justify-between items-center border-b-[0.5px] border-[#5F5F5F] px-3 py-[13px] ">
+                  <p className="text-white">UQDS....fvzn</p>
+                  <ChevronRightIcon/>
+                </div>
+                <div className="flex justify-between items-center px-3 py-[13px] ">
+                  <p className="text-white">UQDS....fvzn</p>
+                  <ChevronRightIcon/>
+                </div>
+              </div>
             </div>
           </div>
         )}
