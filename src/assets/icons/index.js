@@ -18,3 +18,4 @@ export * from "./MissionIcon";
 export * from "./WithDrawIcon";
 export * from "./CardRedIcon";
 export * from "./LogoIcon";
+export * from "./StarIcon";

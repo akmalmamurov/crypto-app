@@ -5,3 +5,4 @@ export * from "@/data/draw-table-list";
 export * from "@/data/draw-table-header";
 export * from "@/data/cards-data";
 export * from "@/data/exchanga-header-data";
+export * from "@/data/friends-table-header";
