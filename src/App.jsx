@@ -18,8 +18,8 @@ function App() {
         <Route path="friends" element={<Friends />} />
         <Route path="mission" element={<Mission />} />
         <Route path="exchange" element={<Exchange />} />
+        <Route path="settings" element={<Settings />} />
       </Route>
-      <Route path="settings" element={<Settings />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

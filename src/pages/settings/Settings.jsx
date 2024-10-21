@@ -1,15 +1,19 @@
 import Title from "@/components/title/Title";
 import SettingLanguage from "./SettingLanguage";
+import SettingCurency from "./SettingCurency";
+import SettingsTheme from "./SettingsTheme"; // Import qiling
 import { useTranslation } from "@/hooks";
 import { ArrowUpIcon } from "@/assets/icons";
 import { Link } from "react-router-dom";
-import SettingCurency from "./SettingCurency";
 import { useState } from "react";
 
 const Settings = () => {
   const [languageOpen, setLanguageOpen] = useState(false);
   const [currencyOpen, setCurrencyOpen] = useState(false);
+  const [themeOpen, setThemeOpen] = useState(false); 
+
   const t = useTranslation();
+
   return (
     <div className="bg-bodyColor h-screen px-[14px] py-[41px]">
       <Link to={"/"}>
@@ -21,12 +25,18 @@ const Settings = () => {
           <SettingLanguage
             isOpen={languageOpen}
             setIsOpen={setLanguageOpen}
-            currencyOpen={currencyOpen}
+            currencyOpen={currencyOpen || themeOpen}
           />
           <SettingCurency
-            languageOpen={languageOpen}
             isOpen={currencyOpen}
             setIsOpen={setCurrencyOpen}
+            languageOpen={languageOpen || themeOpen} 
+          />
+          <SettingsTheme
+            isOpen={themeOpen}
+            setIsOpen={setThemeOpen}
+            languageOpen={languageOpen}
+            currencyOpen={currencyOpen} 
           />
         </div>
       </div>

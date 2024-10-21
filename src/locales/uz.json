@@ -2,5 +2,6 @@
   "settings": "Sozlamalar",
   "selectLanguage": "Tilni tanlang",
   "welcome": "Xush kelibsiz",
-  "mainCurrency": "Asosiy valyuta"
+  "mainCurrency": "Asosiy valyuta",
+  "theme": "Tema"
 }

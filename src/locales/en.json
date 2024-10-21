@@ -2,5 +2,6 @@
   "settings": "Settings",
   "selectLanguage": "Select language",
   "welcome": "Welcome",
-  "mainCurrency": "Main currency"
+  "mainCurrency": "Main currency",
+  "theme": "Theme"
 }
