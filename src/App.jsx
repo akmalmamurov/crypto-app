@@ -10,7 +10,6 @@ import Mission from "@/pages/mission/Mission";
 function App() {
   return (
     <Routes>
-      {/* <Route path="/" element={<Navigate to="/main" replace />} /> */}
 
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -20,6 +19,7 @@ function App() {
         <Route path="exchange" element={<Exchange />} />
         <Route path="settings" element={<Settings />} />
       </Route>
+      {/* <Route path="/" element={<Navigate to="/main" replace />} /> */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
