@@ -1,6 +1,6 @@
-import { loading,  } from "@/assets/images";
+import { loading } from "@/assets/images";
 
-const Loading = ({ progress }) => {
+const MainLoading = ({ progress }) => {
   return (
     <div className="flex flex-col items-center justify-between h-screen bg-[#111827]">
       <div className="flex justify-center items-center h-full">
@@ -17,4 +17,4 @@ const Loading = ({ progress }) => {
   );
 };
 
-export default Loading;
+export default MainLoading;

@@ -1,8 +1,8 @@
+import { MainLoading } from "@/components/loading";
 import Navbar from "@/components/navbar/Navbar";
 import useTelegramStore from "@/context/telegram";
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import Loading from "@/components/Loading/Loading";
 
 const Layout = () => {
   const { tg } = useTelegramStore();
@@ -37,7 +37,7 @@ const Layout = () => {
   }, [progress]);
 
   if (loading) {
-    return <Loading progress={progress} />;
+    return <MainLoading progress={progress} />;
   }
 
   return (
