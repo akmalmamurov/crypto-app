@@ -1,9 +1,15 @@
-import React from 'react'
+import { drawTabsHeader } from "@/data";
+import DrawCard from "./draw-card/DrawCard";
+import DrawWallet from "./DrawWallet";
+import CustomTabs from "@/components/tabs/CustomTabs";
 
 const Draw = () => {
-  return (
-    <div>Draw</div>
-  )
-}
+  const panels = [
+    { key: "card", value: "card", component: <DrawCard /> },
+    { key: "wallet", value: "wallet", component: <DrawWallet /> },
+  ];
 
-export default Draw
+  return <CustomTabs headerData={drawTabsHeader} defaultValue="card" panels={panels} />;
+};
+
+export default Draw;
