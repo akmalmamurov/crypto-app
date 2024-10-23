@@ -2,6 +2,8 @@ import { lazy, Suspense } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 
 import Layout from "@/layout/Layout";
+import { Spinner } from "@material-tailwind/react";
+import PageLoading from "./components/loading/PageLoading";
 const Home = lazy(() => import("@/pages/Home/Home"));
 const Draw = lazy(() => import("@/pages/draw/Draw"));
 const Friends = lazy(() => import("@/pages/friends/Friends"));
@@ -11,7 +13,7 @@ const Mission = lazy(() => import("@/pages/mission/Mission"));
 
 function App() {
   return (
-    <Suspense fallback={""}>
+    <Suspense fallback={<PageLoading />}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

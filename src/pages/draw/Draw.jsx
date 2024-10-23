@@ -1,5 +1,5 @@
 import { drawTabsHeader } from "@/data";
-import DrawCard from "./DrawCard";
+import DrawCard from "./draw-card/DrawCard";
 import DrawWallet from "./DrawWallet";
 import CustomTabs from "@/components/tabs/CustomTabs";
 

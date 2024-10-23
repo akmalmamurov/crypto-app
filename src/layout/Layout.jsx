@@ -13,13 +13,13 @@ const Layout = () => {
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev <= 100) {
-          return prev + 1;
+          return prev + 50;
         } else {
           clearInterval(interval);
           return 100;
         }
       });
-    }, 50);
+    }, 30);
 
     return () => clearInterval(interval);
   }, []);
@@ -45,7 +45,7 @@ const Layout = () => {
       <div className="flex-grow px-[14px] overflow-y-auto scrollbar-none">
         <Outlet />
       </div>
-      <div className="flex-shrink-0 bg-red-500">
+      <div className="flex-shrink-0 ">
         <Navbar />
       </div>
     </div>
