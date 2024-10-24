@@ -7,7 +7,6 @@ import { Button } from "@material-tailwind/react";
 const ShowDraw = ({ register, setValue, errors, watch }) => {
   const { currency } = useSettingsStore();
 
-  // Inputdagi qiymatni kuzatish
   const checkAmount = watch("amount");
   const handleIconClick = () => {
     setValue("amount", cryptoMarket);
@@ -21,7 +20,6 @@ const ShowDraw = ({ register, setValue, errors, watch }) => {
     setValue("amount", formattedValue);
   };
 
-  // 20,000 dan kam bo'lsa xatolik holatini aniqlash
   const showError = checkAmount && parseInt(checkAmount.replace(/\s/g, '')) < 20000;
 
   return (

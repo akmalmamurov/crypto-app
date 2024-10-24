@@ -1,4 +1,3 @@
-import { lazy } from "react";
 import { drawTabsHeader } from "@/data";
 import {
   Tab,
@@ -14,8 +13,7 @@ import BaseTitle from "@/components/title/BaseTitle";
 import DrawTable from "@/components/table/DrawTable";
 import Receivers from "./draw-card/Receivers";
 import { DrawCardIcon } from "@/assets/icons";
-// const DrawCard = lazy(() => import("./draw-card/DrawCard"));
-const DrawWallet = lazy(() => import("./DrawWallet"));
+import DrawWallet from "./DrawWallet";
 
 const Draw = () => {
   const MIN_AMOUNT = 20000;

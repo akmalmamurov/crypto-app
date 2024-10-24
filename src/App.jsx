@@ -7,6 +7,7 @@ import Friends from "@/pages/friends/Friends";
 import Mission from "@/pages/mission/Mission";
 import Exchange from "@/pages/exchange/Exchange";
 import Settings from "@/pages/settings/Settings";
+import ExchangeDetails from "@/pages/exchange/ExchangeDetails";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Route path="exchange" element={<Exchange />} />
         <Route path="settings" element={<Settings />} />
       </Route>
-      {/* <Route path="/" element={<Navigate to="/main" replace />} /> */}
+      <Route path="/exchange/:type" element={<ExchangeDetails />} />
+
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

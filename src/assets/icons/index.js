@@ -19,3 +19,4 @@ export * from "./WithDrawIcon";
 export * from "./CardRedIcon";
 export * from "./LogoIcon";
 export * from "./StarIcon";
+export * from "./SwapIcon";
