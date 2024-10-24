@@ -1,7 +1,6 @@
 import { DrawCardIcon } from "@/assets/icons";
 
 import BaseTitle from "@/components/title/BaseTitle";
-import useSettingsStore from "@/context/settings";
 import { useForm } from "react-hook-form";
 import { formatInputNumber } from "@/utils";
 import Receivers from "./Receivers";
@@ -18,7 +17,6 @@ const DrawCard = () => {
     setValue,
     reset,
   } = useForm();
-  const { currency } = useSettingsStore();
   const cardValue = watch("card");
 
   const onSubmit = (data) => {
@@ -55,7 +53,7 @@ const DrawCard = () => {
       <div className="mb-[15px]">
         <BaseTitle>Receiver card</BaseTitle>
         <div className="bg-mainColor p-3 rounded-[7px] flex items-center font-poppins relative">
-          <label htmlFor="card">
+          <label htmlFor="card" className="text-white">
             {cardValue && cardValue.startsWith("9860") ? (
               <DrawCardIcon />
             ) : cardValue && cardValue.startsWith("8600") ? (

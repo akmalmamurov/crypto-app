@@ -48,7 +48,7 @@ const ShowDraw = ({ register, setValue, errors, watch }) => {
               })}
             />
             <span className="absolute top-0 right-[0]">
-              <p>{currency}</p>
+              <p className="text-silver">{currency}</p>
             </span>
           </div>
           <span onClick={handleIconClick}>
@@ -64,9 +64,9 @@ const ShowDraw = ({ register, setValue, errors, watch }) => {
             <h4 className="font-medium text-white text-base">Crypto Market</h4>
             <LogoIcon />
           </div>
-          <p>
-            {cryptoMarket}
-            <span>{currency}</span>
+          <p className="text-white">
+            {cryptoMarket} 
+            <span className="ml-1 text-silver">{currency}</span>
           </p>
         </div>
       </div>
