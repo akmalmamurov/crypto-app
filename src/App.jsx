@@ -1,32 +1,27 @@
-import { lazy, Suspense } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 
 import Layout from "@/layout/Layout";
-import { Spinner } from "@material-tailwind/react";
-import PageLoading from "./components/loading/PageLoading";
-const Home = lazy(() => import("@/pages/Home/Home"));
-const Draw = lazy(() => import("@/pages/draw/Draw"));
-const Friends = lazy(() => import("@/pages/friends/Friends"));
-const Exchange = lazy(() => import("@/pages/exchange/Exchange"));
-const Settings = lazy(() => import("@/pages/settings/Settings"));
-const Mission = lazy(() => import("@/pages/mission/Mission"));
+import Home from "@/pages/Home/Home";
+import Draw from "@/pages/draw/Draw";
+import Friends from "@/pages/friends/Friends";
+import Mission from "@/pages/mission/Mission";
+import Exchange from "@/pages/exchange/Exchange";
+import Settings from "@/pages/settings/Settings";
 
 function App() {
   return (
-    <Suspense fallback={<PageLoading />}>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="draw" element={<Draw />} />
-          <Route path="friends" element={<Friends />} />
-          <Route path="mission" element={<Mission />} />
-          <Route path="exchange" element={<Exchange />} />
-          <Route path="settings" element={<Settings />} />
-        </Route>
-        {/* <Route path="/" element={<Navigate to="/main" replace />} /> */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </Suspense>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="draw" element={<Draw />} />
+        <Route path="friends" element={<Friends />} />
+        <Route path="mission" element={<Mission />} />
+        <Route path="exchange" element={<Exchange />} />
+        <Route path="settings" element={<Settings />} />
+      </Route>
+      {/* <Route path="/" element={<Navigate to="/main" replace />} /> */}
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 
